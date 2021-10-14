@@ -10,8 +10,8 @@ makeCacheMatrix <- function(x = matrix()) {   #Creating the matrix function
         }
         get <- function() x     # Return the matrix
         setsolve <- function(solve) a <<- solve
-        getsolve <- function() a
-        list(set = set, get = get,
+        getsolve <- function() a        #Inverse property
+        list(set = set, get = get,      #Defined list
              setsolve = setsolve,
              getsolve = getsolve)
 }
@@ -25,9 +25,9 @@ cacheSolve <- function(x, ...) {
                 message("getting inversed matrix")
                 return(a)
         }
-        data <- x$get()
-        a <- solve(data, ...)
-        x$setsolve(a)
-        a
+        data <- x$get()         #The matrix of my variable is obtained
+        a <- solve(data, ...)   #The inverse is obtained by multiplying matrices
+        x$setsolve(a)           #the inverse of the variable is obtained
+        a                       #Returns the variables, in our case a matrix
         
 }
