@@ -2,13 +2,13 @@
 # Then I see the relation that they give as an example in coursera and I 
 # change the reference "mean" to "solve" to obtain what they ask me.
 
-makeCacheMatrix <- function(x = matrix()) {
-        a <- NULL
-        set <- function(y) {
+makeCacheMatrix <- function(x = matrix()) {   #Creating the matrix function
+        a <- NULL                             #Put "a" to start the reverse property
+        set <- function(y) {    #here I configure the matrix
                 x <<- y
                 a <<- NULL
         }
-        get <- function() x
+        get <- function() x     # Return the matrix
         setsolve <- function(solve) a <<- solve
         getsolve <- function() a
         list(set = set, get = get,
@@ -17,7 +17,7 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Write a short comment describing this function
+
 
 cacheSolve <- function(x, ...) {
         a <- x$getsolve()
@@ -29,5 +29,5 @@ cacheSolve <- function(x, ...) {
         a <- solve(data, ...)
         x$setsolve(a)
         a
-        ## Return a matrix that is the inverse of 'x'
+        
 }
