@@ -17,7 +17,9 @@ makeCacheMatrix <- function(x = matrix()) {   #Creating the matrix function
 }
 
 
-
+#The variable "cacheolve" obtains the inverse of the matrix that throws "MakeCacheMatrix" and 
+#the following is added: If the inverse is already calculated, and the array array has not changed, 
+#then the variable "cachesolve" retrieves the reverse matrix of the cache.
 
 cacheSolve <- function(x, ...) {
         a <- x$getsolve()
